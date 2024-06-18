@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Forum Threads</h2>
+  <ul>
+    {% for thread in threads %}
+      <li><a href="{% url 'thread_detail' thread.pk %}">{{ thread.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endblock %}
