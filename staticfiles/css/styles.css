@@ -1,0 +1,223 @@
+/* Reset default browser styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif; /* Use a common sans-serif font */
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #2A73CC; /* Coursera's primary blue color */
+    padding: 0.75rem 1.5rem; /* Increase padding for better spacing */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.navbar-brand {
+    font-size: 1.8rem; /* Larger font size for the brand */
+    font-weight: bold; /* Bold font weight for emphasis */
+    color: #fff; /* White text color */
+}
+
+.navbar-brand:hover {
+    color: #f9f9f9; /* Lighter white on hover for contrast */
+}
+
+.navbar-nav {
+    margin-left: auto; /* Right align the nav items */
+}
+
+.nav-item {
+    margin-left: 1.5rem; /* Spacing between nav items */
+}
+
+.nav-link {
+    color: #f9f9f9; /* White text color */
+    font-size: 1rem; /* Normal font size */
+    text-transform: uppercase; /* Uppercase text */
+    font-weight: bold; /* Bold font weight */
+}
+
+.nav-link:hover {
+    color: #f0f0f0; /* Lighter white on hover for contrast */
+}
+
+/* Container styling */
+.container {
+    margin-top: 2rem; /* Increase top margin */
+}
+
+/* Heading styling */
+h2 {
+    font-size: 2.5rem; /* Larger heading font size */
+    font-weight: bold; /* Bold font weight */
+    margin-bottom: 1.5rem; /* Space below headings */
+}
+
+/* Button styling */
+.btn {
+    background-color: #2A73CC; /* Coursera's primary blue color */
+    color: #fff; /* White text color */
+    padding: 0.75rem 1.5rem; /* Padding for buttons */
+    border: none; /* Remove default border */
+    border-radius: 0.25rem; /* Slightly rounded corners */
+    font-size: 1rem; /* Normal font size */
+    font-weight: bold; /* Bold font weight */
+    text-transform: uppercase; /* Uppercase text */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.btn:hover {
+    opacity: 0.9; /* Slightly reduce opacity on hover */
+}
+
+/* Form styling */
+.form-control {
+    border: 1px solid #ccc; /* Light gray border */
+    padding: 0.75rem 1rem; /* Padding for form inputs */
+    font-size: 1rem; /* Normal font size */
+    border-radius: 0.25rem; /* Slightly rounded corners */
+}
+
+.form-control:focus {
+    border-color: #2A73CC; /* Focus color */
+    box-shadow: 0 0 0 0.2rem rgba(42, 115, 204, 0.25); /* Focus shadow */
+}
+
+/* Card styling */
+.card {
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 0.5rem; /* Slightly rounded corners */
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.card-header {
+    background-color: #f9f9f9; /* Light gray background */
+    border-bottom: 1px solid #ddd; /* Light gray bottom border */
+    padding: 1rem 1.5rem; /* Padding for card header */
+    font-size: 1.25rem; /* Larger font size for card header */
+    font-weight: bold; /* Bold font weight */
+}
+
+.card-body {
+    padding: 1.5rem; /* Padding for card body */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .navbar-nav {
+        margin-left: 0; /* Center align nav items on smaller screens */
+    }
+    .nav-item {
+        margin-left: 1rem; /* Reduce margin between nav items */
+    }
+    .btn {
+        width: 100%; /* Full width buttons on smaller screens */
+    }
+}
+
+/* Additional customizations can be added as needed */
+
+/* Hero section styling */
+.hero {
+    background-color: #f9f9f9; /* Light gray background */
+    padding: 4rem 0; /* Padding top and bottom */
+    text-align: center; /* Center align text */
+}
+
+.hero h1 {
+    font-size: 3rem; /* Larger font size for hero headings */
+    font-weight: bold; /* Bold font weight */
+    margin-bottom: 1rem; /* Space below hero heading */
+}
+
+.hero p {
+    font-size: 1.25rem; /* Font size for hero paragraph */
+    color: #666; /* Gray text color */
+    margin-bottom: 2rem; /* Space below hero paragraph */
+}
+
+/* Footer styling */
+footer {
+    background-color: #222; /* Dark background color */
+    color: #fff; /* White text color */
+    padding: 2rem 0; /* Padding top and bottom */
+    text-align: center; /* Center align text */
+}
+
+footer p {
+    margin: 0; /* Remove margin for paragraphs inside footer */
+}
+
+/* Section headings */
+.section-heading {
+    font-size: 2.5rem; /* Larger font size for section headings */
+    font-weight: bold; /* Bold font weight */
+    margin-bottom: 1.5rem; /* Space below section headings */
+}
+
+/* List item styling */
+ul {
+    list-style-type: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+}
+
+ul li {
+    margin-bottom: 0.5rem; /* Space between list items */
+}
+
+/* Image styling */
+.img-fluid {
+    max-width: 100%; /* Ensure images are responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Button outline */
+.btn-outline {
+    background-color: transparent; /* Transparent background */
+    border: 2px solid #2A73CC; /* Coursera's primary blue color */
+    color: #2A73CC; /* Blue text color */
+}
+
+.btn-outline:hover {
+    background-color: #2A73CC; /* Blue background on hover */
+    color: #fff; /* White text color on hover */
+}
+
+/* Card image overlay */
+.card-img-overlay {
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
+    color: #fff; /* White text color */
+    padding: 1rem; /* Padding for overlay content */
+    text-align: center; /* Center align text */
+}
+
+/* Custom utilities */
+.text-primary {
+    color: #2A73CC; /* Coursera's primary blue color */
+}
+
+.text-success {
+    color: #28a745; /* Success color */
+}
+
+.text-danger {
+    color: #dc3545; /* Danger color */
+}
+
+.text-warning {
+    color: #ffc107; /* Warning color */
+}
+
+.text-info {
+    color: #17a2b8; /* Info color */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 576px) {
+    .hero h1 {
+        font-size: 2.5rem; /* Adjust hero heading font size for smaller screens */
+    }
+    .hero p {
+        font-size: 1rem; /* Adjust hero paragraph font size for smaller screens */
+    }
+}
