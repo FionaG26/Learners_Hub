@@ -3,6 +3,16 @@ from .models import Thread, Post
 from .forms import PostForm
 
 
+def thread_create(request):
+    if request.method == 'POST':
+        form = ThreadForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('thread_list')
+    else:
+        form = ThreadForm()
+    return render(request, 'forum/thread_form.html', {'form': form})
+
 def thread_list(request):
     threads = Thread.objects.all()
     return render(request, 'forum/thread_list.html', {'threads': threads})
