@@ -22,6 +22,11 @@ def login_view(request):
                                                                     
     return render(request, 'users/login.html')
 
+def logout_view(request):
+    if request.method == 'POST':
+        logout(request)
+        return redirect('home')
+
 def contact(request):
     if request.method == 'POST':
         # Here you can handle the form submission, e.g., save to the database or send an email.
