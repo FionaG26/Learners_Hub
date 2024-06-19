@@ -1,7 +1,20 @@
 {% extends "base.html" %}
+
+{% block title %}{{ course.title }} - Learners Hub{% endblock %}
+
 {% block content %}
-  <h2>{{ course.title }}</h2>
-  <p>{{ course.description }}</p>
-  <p>Instructor: {{ course.instructor.username }}</p>
-  <p>Price: ${{ course.price }}</p>
+<div class="container my-4">
+    <h2>{{ course.title }}</h2>
+    <img src="{{ course.image.url }}" class="img-fluid mb-4" alt="{{ course.title }}">
+    <p>{{ course.description }}</p>
+    <p>Instructor: {{ course.instructor.username }}</p>
+    <p>Price: ${{ course.price }}</p>
+    <h3>Course Content</h3>
+    <ul>
+        {% for lesson in course.lessons %}
+        <li>{{ lesson.title }}</li>
+        {% endfor %}
+    </ul>
+    <a href="#" class="btn btn-primary">Enroll Now</a>
+</div>
 {% endblock %}
