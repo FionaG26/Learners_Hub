@@ -1,0 +1,40 @@
+<!-- templates/courses/books.html -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Books - Learners Hub{% endblock %}
+
+{% block content %}
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <h2>Recommended Books</h2>
+                <p>Explore our recommended books! Dive into the world of knowledge with these insightful reads.</p>
+                <div class="book-list">
+                    <div class="book-item">
+                        <h3>Clean Code: A Handbook of Agile Software Craftsmanship</h3>
+                        <p>By Robert C. Martin. Learn best practices for writing clean and maintainable code.</p>
+                    </div>
+                    <div class="book-item">
+                        <h3>Python Crash Course</h3>
+                        <p>By Eric Matthes. A hands-on, project-based introduction to programming with Python.</p>
+                    </div>
+                    <!-- Add more books as needed -->
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="sidebar">
+                    <h4>Featured Authors</h4>
+                    <ul class="author-list">
+                        <li><a href="#">Robert C. Martin</a></li>
+                        <li><a href="#">Eric Matthes</a></li>
+                        <!-- Add more authors as needed -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
