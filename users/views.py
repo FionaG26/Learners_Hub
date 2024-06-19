@@ -40,7 +40,6 @@ def contact(request):
 
     return render(request, 'contact.html')
                                                                     
-
 def register(request):
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
@@ -54,3 +53,11 @@ def register(request):
 
 def profile(request):
     return render(request, 'users/profile.html')
+
+def subscribe(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        # Handle the subscription logic here
+        # For example, save the email to the database or send a confirmation email
+        return HttpResponse('Thank you for subscribing!')
+    return render(request, 'home.html')
