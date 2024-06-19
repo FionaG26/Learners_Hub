@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from .forms import CustomUserCreationForm
-
+from .forms import ProfileUpdateForm
+from django.contrib import messages
 
 def home(request):
     return render(request, 'home.html')
@@ -61,3 +62,18 @@ def subscribe(request):
         # For example, save the email to the database or send a confirmation email
         return HttpResponse('Thank you for subscribing!')
     return render(request, 'home.html')
+
+def update_profile(request):
+    if request.method == 'POST':
+        form = ProfileUpdateForm(request.POST, instance=request.user.profile)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your profile has been updated!')
+            return redirect('profile')  # Redirect to the profile page after update
+    else:
+        form = ProfileUpdateForm(instance=request.user.profile)
+    
+    context = {
+        'form': form
+    }
+    return render(request, 'users/profile_update.html', context)
