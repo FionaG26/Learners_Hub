@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Learners Hub{% endblock %}
+
+{% block content %}
+<div class="container my-4">
+    <h2>Featured Courses</h2>
+    <div class="row">
+        {% for course in courses %}
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="{{ course.image.url }}" class="card-img-top" alt="{{ course.title }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ course.title }}</h5>
+                    <p class="card-text">{{ course.description }}</p>
+                    <a href="{% url 'course_detail' course.id %}" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="container my-4">
+    <h2>Course Pricing</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card text-center mb-4">
+                <div class="card-header">Basic</div>
+                <div class="card-body">
+                    <h5 class="card-title">$19.99</h5>
+                    <p class="card-text">Access to basic courses</p>
+                    <a href="#" class="btn btn-primary">Get Started</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center mb-4">
+                <div class="card-header">Standard</div>
+                <div class="card-body">
+                    <h5 class="card-title">$49.99</h5>
+                    <p class="card-text">Access to standard courses</p>
+                    <a href="#" class="btn btn-primary">Get Started</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center mb-4">
+                <div class="card-header">Premium</div>
+                <div class="card-body">
+                    <h5 class="card-title">$99.99</h5>
+                    <p class="card-text">Access to all courses</p>
+                    <a href="#" class="btn btn-primary">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-4">
+    <h2>Testimonials</h2>
+    <div class="owl-carousel owl-theme">
+        <div class="item">
+            <div class="card text-center">
+                <div class="card-body">
+                    <p class="card-text">"Great platform for learning new skills!"</p>
+                    <h5 class="card-title">John Doe</h5>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="card text-center">
+                <div class="card-body">
+                    <p class="card-text">"Highly recommend to everyone."</p>
+                    <h5 class="card-title">Jane Smith</h5>
+                </div>
+            </div>
+        </div>
+        <!-- Add more testimonials as needed -->
+    </div>
+</div>
+
+<div class="container my-4">
+    <h2>Contact Us</h2>
+    <form method="post" action="{% url 'contact' %}">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" id="message" name="message" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+<div class="container my-4">
+    <h2>Subscribe to Our Newsletter</h2>
+    <form method="post" action="{% url 'subscribe' %}">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+    </form>
+</div>
+
+<div class="container my-4">
+    <h2>Find Us</h2>
+    <div id="map" style="height: 400px;"></div>
+    <script>
+        function initMap() {
+            var location = {lat: -34.397, lng: 150.644};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 8,
+                center: location
+            });
+            var marker = new google.maps.Marker({
+                position: location,
+                map: map
+            });
+        }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+    </script>
+</div>
+{% endblock %}
