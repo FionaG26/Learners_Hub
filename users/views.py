@@ -4,7 +4,7 @@ from .forms import CustomUserCreationForm
 
 
 def home(request):
-    return render(request, 'base.html')
+    return render(request, 'home.html')
 
 def login_view(request):
     if request.method == 'POST':
