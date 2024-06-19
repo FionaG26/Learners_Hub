@@ -2,9 +2,6 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Course
 from .forms import CourseForm
 
-def online_courses(request):
-    return render(request, 'courses/online_courses.html')
-
 def books(request):
     return render(request, 'courses/books.html')
 
