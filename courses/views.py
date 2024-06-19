@@ -2,6 +2,14 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Course
 from .forms import CourseForm
 
+def online_courses(request):
+    return render(request, 'courses/online_courses.html')
+
+def books(request):
+    return render(request, 'courses/books.html')
+
+def blogs(request):
+    return render(request, 'courses/blogs.html')
 
 def course_list(request):
     courses = Course.objects.all()
