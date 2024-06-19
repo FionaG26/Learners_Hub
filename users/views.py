@@ -21,6 +21,19 @@ def login_view(request):
             return render(request, 'users/login.html', {'error': error})
                                                                     
     return render(request, 'users/login.html')
+
+def contact(request):
+    if request.method == 'POST':
+        # Here you can handle the form submission, e.g., save to the database or send an email.
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+
+        # Add your form handling logic here.
+
+        return HttpResponseRedirect(reverse('contact'))
+
+    return render(request, 'contact.html')
                                                                     
 
 def register(request):
