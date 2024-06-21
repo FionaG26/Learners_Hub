@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Bank Transfer Payment{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h2 class="card-title">Bank Transfer Payment for {{ course.title }}</h2>
+            <p class="card-text">Amount: ${{ course.price }}</p>
+	    <form method="post" enctype="multipart/form-data" action="{% url 'payments:bank_transfer_payment'%}">
+                {% csrf_token %}
+                <div class="mb-3">
+                    {{ form.proof_of_payment.label_tag }}
+                    {{ form.proof_of_payment }}
+                    <div class="form-text">{{ form.proof_of_payment.help_text }}</div>
+                </div>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-upload"></i> Submit Payment</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
